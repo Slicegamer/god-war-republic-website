@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God War Republic</title>
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+<body>
+
+    <section id="registration">
+        <h2>User Registration</h2>
+        <form id="registrationForm">
+            <label for="realName">Real Life Name:</label>
+            <input type="text" id="realName" required><br>
+
+            <label for="realLastName">Real Life Last Name:</label>
+            <input type="text" id="realLastName" required><br>
+
+            <label for="godCountryName">God Country Name:</label>
+            <input type="text" id="godCountryName" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required><br>
+
+            <button type="button" onclick="registerUser()">Register</button>
+        </form>
+    </section>
+
+    <script>
+        function registerUser() {
+            // Get form values
+            var realName = document.getElementById('realName').value;
+            var realLastName = document.getElementById('realLastName').value;
+            var godCountryName = document.getElementById('godCountryName').value;
+            var email = document.getElementById('email').value;
+
+            // Validate email (add more validation as needed)
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Simulate sending an email (this should be done on the server)
+            sendConfirmationEmail(email);
+
+            // Show a confirmation message (replace this with your logic)
+            alert('Registration successful! Check your email for confirmation.');
+
+            // Additional logic for saving user data and sending it to the server
+            // ...
+
+            // Clear form fields
+            document.getElementById('registrationForm').reset();
+        }
+
+        function isValidEmail(email) {
+            // Add your email validation logic here
+            // This is a simple example, consider using a regular expression
+            return email.includes('@');
+        }
+
+        function sendConfirmationEmail(email) {
+            // Simulate sending a confirmation email (this should be done on the server)
+            console.log('Email sent to ' + email);
+            // Replace this with server-side email sending logic
+        }
+    </script>
+
+</body>
+</html>
